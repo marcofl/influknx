@@ -1,0 +1,32 @@
+---
+knx:
+  gateway_ip: 172.17.0.198
+  gateway_port: 3671
+influxdb:
+  host: localhost
+  username: influknx
+  password: influknx
+  database: influknx
+
+datapoints:
+  '7/0/0':
+    description: 'Haus (Wirkleistung)'
+    type: '4Byte'
+    measurement: power
+  '7/0/1':
+    description: 'Wohnung (Wirkleistung)'
+    type: '4Byte'
+    measurement: power
+  '7/0/2':
+    description: 'Heizung (Wirkleistung)'
+    type: '4Byte'
+    measurement: power
+  '7/0/3':
+    description: 'PV (Wirkleistung)'
+    type: '4Byte'
+    measurement: power
+sources:
+  '1.0.131': 'Zähler Haus'
+  '1.0.133': 'Zähler Heizung'
+  '1.0.134': 'Zähler PV'
+  '1.0.132': 'Zähler Wohung'
