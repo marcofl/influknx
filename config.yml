@@ -3,9 +3,9 @@ knx:
   gateway_ip: 172.17.0.198
   gateway_port: 3671
 influxdb:
-  host: localhost
-  username: influknx
-  password: influknx
+  host: influxdb
+  # username: influknx
+  # password: influknx
   database: influknx
 
 datapoints:
