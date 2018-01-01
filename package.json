@@ -1,0 +1,9 @@
+{
+  "name": "influknx",
+  "version": "0.0.1",
+  "dependencies": {
+    "influx": ">=5.0.7",
+    "knx": ">=2.2.8",
+    "js-yaml": ">=3.10.0"
+  }
+}
