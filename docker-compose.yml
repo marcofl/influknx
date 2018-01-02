@@ -15,9 +15,10 @@ services:
   influknx:
     image: influknx:devel
     volumes:
-      - '/vagrant/config.yml:/usr/src/app/config.yml'
+      - './config.yml:/usr/src/app/config.yml'
     links:
       - 'influxdb:influxdb'
+    restart: always
   grafana:
     image: grafana/grafana
     ports:
@@ -28,6 +29,7 @@ services:
       - 'influxdb:influxdb'
     environment:
       GF_SECURITY_ADMIN_PASSWORD: secret
+    restart: always
 volumes:
   grafana:
   influxdb:
