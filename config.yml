@@ -11,68 +11,72 @@ influxdb:
 datapoints:
   '7/0/0':
     description: 'Haus (Wirkleistung)'
-    type: '4Byte'
+    type: 'DPT14'
     measurement: power
   '7/0/1':
     description: 'Wohnung (Wirkleistung)'
-    type: '4Byte'
+    type: 'DPT14'
     measurement: power
   '7/0/2':
     description: 'Heizung (Wirkleistung)'
-    type: '4Byte'
+    type: 'DPT14'
     measurement: power
   '7/0/4':
     description: 'PV (Wirkleistung)'
-    type: '4Byte'
+    type: 'DPT14'
     measurement: power
   '7/0/10':
     description: 'Haus (Wirkenergie)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/11':
     description: 'Wohnung (Wirkenergie)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/12':
     description: 'Heizung (Wirkenergie)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/14':
     description: 'PV (Wirkenergie)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/20':
     description: 'Haus (Wirkenergie, T1)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/21':
     description: 'Haus (Wirkenergie, T2)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/22':
     description: 'Wohnung (Wirkenergie, T1)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/23':
     description: 'Wohnung (Wirkenergie, T2)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/24':
     description: 'PV (Wirkenergie, T1)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/25':
     description: 'PV (Wirkenergie, T2)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/26':
     description: 'Heizung (Wirkenergie, T1)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
   '7/0/27':
     description: 'Heizung (Wirkenergie, T2)'
-    type: '4ByteUint'
+    type: 'DPT12'
     measurement: energy
+  '0/0/50':
+    description: 'Windgeschwindigkeit_Dach'
+    type: 'DPT9'
+    measurement: wetter
 sources:
   '1.0.131': 'Zähler Haus'
   '1.0.133': 'Zähler Heizung'
