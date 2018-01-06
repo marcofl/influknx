@@ -27,7 +27,7 @@ The actual application that listens to configured datapoints on the bus, decodes
 * Values are logged on change only (change compared to last value, done by ekarak/knx)
 * configured via config.yml
 
-### config.yaml example
+### config.yml example
 See https://bitbucket.org/ekarak/knx.js/src/master/README-datapoints.md for supported data types. The datatype must match the data type of the group address in KNX ETS.
 ```
 ---
@@ -41,7 +41,7 @@ influxdb:
   database: influknx
 
 datapoints:
-  '7/0/0':                        # KNX group address where the
+  '7/0/0':                        # KNX group address
     description: 'House (Power)'  # used to generate the influxdb tag, should be unique
     type: 'DPT14'                 # important to select carefully, otherwise you'll get garbage values only!
     measurement: power            # name of the measurement in influxdb, group similar things together
@@ -61,7 +61,7 @@ Test script to make sure you selected the correct DPT (data point type) before a
 * uses the same config.yml config file
 
 ## csv-importer.js
-A simple csv to InfluxDB importer. Can work with 2 column CSV without headers, in the format of `<unixtimestamp>,<value>` to import existing historical data 
+A simple csv to InfluxDB importer. Can work with 2 column CSV without headers, in the format of `<unixtimestamp>,<value>` to import existing historical data
 
 ### Example
 ```
