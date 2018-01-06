@@ -19,7 +19,6 @@ console.log("short_name: %j", name)
 var measurement = args[1]
 console.log("measurement: %j", measurement)
 
-
 Fs.createReadStream(csvFilePath)
   .pipe(csv({headers: ['time', 'value']}))
   .on('data', function (data) {

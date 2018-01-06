@@ -1,6 +1,6 @@
 {
   "name": "influknx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "@petamoriken/float16": "^1.0.6",
     "csv-parser": "^1.12.0",

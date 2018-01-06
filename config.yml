@@ -75,10 +75,5 @@ datapoints:
     measurement: energy
   '0/0/50':
     description: 'Windgeschwindigkeit_Dach'
-    type: 'DPT9'
+    type: 'DPT9.005'
     measurement: wetter
-sources:
-  '1.0.131': 'Zähler Haus'
-  '1.0.133': 'Zähler Heizung'
-  '1.0.134': 'Zähler PV'
-  '1.0.132': 'Zähler Wohung'

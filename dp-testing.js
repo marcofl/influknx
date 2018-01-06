@@ -1,18 +1,10 @@
 const Knx = require('knx');
 const YAML = require("js-yaml");
 const Fs = require("fs");
-const Influx = require('influx');
 
 var config = YAML.load(Fs.readFileSync("config.yml"));
 var datapoints = config.datapoints
 var sources = config.sources
-
-const influx = new Influx.InfluxDB({
-  host: config.influxdb.host,
-  database: config.influxdb.database,
-  username: config.influxdb.username,
-  password: config.influxdb.password,
-})
 
 function handler(group_addr, datapoint) {
   dp = new Knx.Datapoint({ga: group_addr, dpt: datapoint.type}, connection);
@@ -23,17 +15,9 @@ function handler(group_addr, datapoint) {
       // remove common special chars to create a more machine readable tag
       var short_name = datapoint.description.replace(/([(,)])/g, '').replace(/([ ])/g, '_').replace(/[^\x00-\x7F]/g, '');
     }
-    console.log("%s **** METRIC catched: GA: %j (%j, %j), value: %j",
+    console.log("%s **** METRIC: GA: %j (%j, %j), value: %j",
       new Date().toISOString(),
       group_addr, datapoint.type, datapoint.description, newvalue);
-
-    influx.writePoints([
-      {
-        measurement: datapoint.measurement,
-        tags: { group_addr: group_addr, short_name: short_name },
-        fields: { value: newvalue },
-      }
-    ])
   });
 }
 
@@ -46,10 +30,5 @@ var connection = Knx.Connection({
         handler(group_addr, datapoints[group_addr])
       }
     },
-    event: function (evt, src, dest, value) {
-      console.log("%s **** EVENT %j: src: %j, dest: %j, value: %j",
-        new Date().toISOString(),
-        evt, src, dest, value);
-    }
   }
 });
